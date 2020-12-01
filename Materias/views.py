@@ -16,6 +16,6 @@ class AsignaturaListView(generics.ListCreateAPIView):
 
 # Eliminar y Modificar 
 
-class ProfeDetail(generics.RetrieveUpdateDestroyAPIView):
+class AsignaturaDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Asignatura.objects.all()
     serializer_class = AsignaturaSerializer
