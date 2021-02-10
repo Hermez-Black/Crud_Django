@@ -7,15 +7,27 @@ from Materias.serializers import AsignaturaSerializer
 # from django.views.generic import CreateView
 from rest_framework import generics, status
 from rest_framework.response import Response
+from rest_framework import viewsets
+# from rest_framework.permissions import (
+#     AllowAny,
+#     IsAuthenticated
+# )
 # Create your views here.
 # Obtener y crear
 
-class AsignaturaListView(generics.ListCreateAPIView):
+# crud
+class AsignaturaViewSet(viewsets.ModelViewSet):
     queryset = Asignatura.objects.all()
     serializer_class = AsignaturaSerializer
+    # permission_classes = (IsAuthenticated)
 
-# Eliminar y Modificar 
 
-class AsignaturaDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Asignatura.objects.all()
-    serializer_class = AsignaturaSerializer
+# class AsignaturaListView(generics.ListCreateAPIView):
+#     queryset = Asignatura.objects.all()
+#     serializer_class = AsignaturaSerializer
+
+# # Eliminar y Modificar 
+
+# class AsignaturaDetail(generics.RetrieveUpdateDestroyAPIView):
+#     queryset = Asignatura.objects.all()
+#     serializer_class = AsignaturaSerializer

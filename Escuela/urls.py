@@ -15,11 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from Escuela.views import Indexa
+# from rest_framework_simplejwt.views import (
+#     TokenObtainPairView,
+#     TokenRefreshView,
+# )
+
 # from Profesores.views import Profe
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('Profesores/', include('Profesores.urls')),
     path('Materias/', include('Materias.urls')),
-    path('Estudiantes/', include('Estudiantes.urls'))
+    path('Estudiantes/', include('Estudiantes.urls')),
+    # path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    # path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('', Indexa)
 ]

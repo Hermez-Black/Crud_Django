@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'Estudiantes.apps.EstudiantesConfig',
     'Materias.apps.MateriasConfig',
     'Profesores.apps.ProfesoresConfig',
@@ -57,7 +58,7 @@ ROOT_URLCONF = 'Escuela.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['templates', 'templates/Estudiantes'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
